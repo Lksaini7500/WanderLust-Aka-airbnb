@@ -1,6 +1,10 @@
- "dependencies": {
-    "ejs": "^3.1.10",
-    "ejs-mate": "^4.0.0",
-    "express": "^4.21.2",
-    "method-override": "^3.0.0",
-    "mongoose": "^8.10.2"
+#WANDERLUST
+It's an online marketplace for short-and-long-term homestays and experiences in various countries and regions. (inspired by Airbnb)
+
+Technologies used for development :
+>HTML
+>CSS
+>JAVASCRIPT
+>EJS
+>EXPRESS
+>MONGOOSE
