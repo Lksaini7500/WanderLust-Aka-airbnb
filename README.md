@@ -5,6 +5,7 @@ Technologies used for development :
 >HTML
 >CSS
 >JAVASCRIPT
+>BOOTSTRAP
 >EJS
 >NODEJS
 >EXPRESS
