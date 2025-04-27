@@ -35,7 +35,9 @@ router.get(
   "/:id",
   wrapAsync(async (req, res) => {
     let { id } = req.params;
-    const listing = await Listing.findById(id).populate("reviews");
+    const listing = await Listing.findById(id)
+      .populate("reviews")
+      .populate("owner");
     if (!listing) {
       req.flash("error", "Listing you requested for does not exist!");
       res.redirect("/listings");
@@ -47,10 +49,12 @@ router.get(
 //Create Route
 
 router.post(
-  "/", isLoggedIn,
+  "/",
+  isLoggedIn,
   validateListing,
   wrapAsync(async (req, res, next) => {
     const newListing = new Listing(req.body.listing);
+    newListing.owner = req.user._id;
     await newListing.save();
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
@@ -59,7 +63,8 @@ router.post(
 
 //Edit Route
 router.get(
-  "/:id/edit", isLoggedIn,
+  "/:id/edit",
+  isLoggedIn,
   wrapAsync(async (req, res) => {
     let { id } = req.params;
     const listing = await Listing.findById(id);
@@ -73,7 +78,8 @@ router.get(
 
 //Update Route
 router.put(
-  "/:id", isLoggedIn,
+  "/:id",
+  isLoggedIn,
   validateListing,
   wrapAsync(async (req, res) => {
     let { id } = req.params;
@@ -85,7 +91,8 @@ router.put(
 
 //Delete Route
 router.delete(
-  "/:id", isLoggedIn,
+  "/:id",
+  isLoggedIn,
   wrapAsync(async (req, res) => {
     let { id } = req.params;
     let deletedListing = await Listing.findByIdAndDelete(id);
