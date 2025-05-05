@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    flex: 1;
+  flex: 1;
 }
 /* Navbar */
 
@@ -84,38 +84,44 @@ body {
 /* Card effect  */
 
 .card-img-overlay {
-    opacity: 0;
+  opacity: 0;
 }
 
 .card-img-overlay:hover {
-    opacity: 0.2;
-    background-color: white;
+  opacity: 0.2;
+  background-color: white;
 }
 
 /* New page */
 .add-btn {
-    background-color: #fe424d !important;
-    border: none !important;
-    width: 6rem;
+  background-color: #fe424d !important;
+  border: none !important;
+  width: 6rem;
 }
 
 /* Edit page */
 .edit-btn {
-    background-color: #fe424d !important;
-    border: none !important;
-    width: 6rem;
+  background-color: #fe424d !important;
+  border: none !important;
+  width: 6rem;
 }
 
 /* Show Page */
 .show-img {
-    height: 30vh;
-
+  height: 30vh;
 }
 
-.btns{
-    display: flex;
+.btns {
+  display: flex;
 }
 .show-card {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* MAP */
+
+#map {
+  height: 400px;
+  width: 100vh;
 }
